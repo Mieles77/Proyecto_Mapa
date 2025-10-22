@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="101.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.6359223300970873" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#1e5cfa31" />
+                  <Stop color="#ffffff82" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="507.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="0.5825242718446603" endY="0.10194174757281553" startX="0.6019417475728155" startY="0.941747572815534">
+               <stops>
+                  <Stop color="#1c3068" />
+                  <Stop color="#0099ffdb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TextField fx:id="origen" layoutX="25.0" layoutY="283.0" prefHeight="34.0" prefWidth="308.0" promptText="Origen" style="-fx-background-radius: 15;" />
+      <TextField fx:id="destino" layoutX="25.0" layoutY="239.0" prefHeight="34.0" prefWidth="308.0" promptText="Destino" style="-fx-background-radius: 15;" />
+      <Button layoutX="270.0" layoutY="328.0" mnemonicParsing="false" onAction="#BuscarRuta" prefHeight="22.0" prefWidth="63.0" style="-fx-background-color: #000B58;" text="Buscar" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <ListView fx:id="resultados" layoutX="25.0" layoutY="403.0" prefHeight="157.0" prefWidth="253.0" />
+      <Button layoutX="25.0" layoutY="145.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #000B58;" text="Buscar Ruta" textFill="WHITE" />
+      <Button layoutX="166.0" layoutY="145.0" mnemonicParsing="false" style="-fx-background-color: #000B58;" text="Ver Todas las rutas" textFill="WHITE" />
+      <Label layoutX="24.0" layoutY="210.0" text="Panel de Busqueda" textFill="WHITE">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="373.0" text="Lista de Resultados" textFill="WHITE">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <Line endY="-220.0" layoutX="359.0" layoutY="317.0" startY="280.0" />
+      <ImageView fitHeight="453.0" fitWidth="378.0" layoutX="394.0" layoutY="123.0">
+         <image>
+            <Image url="@../Images/ruta100.png" />
+         </image>
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="-47.0">
+         <image>
+            <Image url="@../Images/mibuslogo.png" />
+         </image>
+      </ImageView>
+      <Button onAction="#irLogin" layoutX="643.0" layoutY="32.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="157.0" style="-fx-background-color: transparent;" text="Iniciar Sesión" underline="true" >
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

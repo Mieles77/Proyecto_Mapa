@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.LoginController">
+   <children>
+      <PasswordField layoutX="15.0" layoutY="340.0" prefHeight="34.0" prefWidth="309.0" promptText="***********" style="-fx-background-color: #E0E0E0; -fx-border-color: #929AAB;" />
+      <TextField layoutX="15.0" layoutY="283.0" prefHeight="34.0" prefWidth="309.0" promptText="correo electronico" style="-fx-background-color: #E0E0E0; -fx-border-color: #929AAB;" />
+      <Label layoutX="29.0" layoutY="98.0" text="Iniciar Sesión">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="45.0" />
+         </font>
+      </Label>
+      <Button focusTraversable="false" layoutX="58.0" layoutY="446.0" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #1B56FD; -fx-background-radius: 40; -fx-border-radius: 30%; -fx-border-color: #FDFAF6;" text="Iniciar Sesion" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.5" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" layoutX="346.0" stroke="#1c58fc92" strokeType="INSIDE" width="454.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.24271844660194175" startX="0.03398058252427194" startY="0.24271844660194175">
+               <stops>
+                  <Stop color="#1b56fd" />
+                  <Stop color="#1c3068" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="392.0" layoutY="239.0" prefHeight="49.0" prefWidth="384.0" text="Hola, Bienvenido" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label layoutX="398.0" layoutY="293.0" prefHeight="31.0" prefWidth="337.0" text="Tu viaje por Valledupar comienza aquí" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="478.0" layoutY="446.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-background-radius: 40; -fx-border-radius: 30%; -fx-border-color: #FDFAF6;" text="Administrador" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.5" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Label layoutX="15.0" layoutY="242.0" prefHeight="24.0" prefWidth="163.0" text="Escriba sus datos">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="391.0" prefHeight="24.0" prefWidth="168.0" text="Olvidé mi contraseña" underline="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="555.0" prefHeight="31.0" prefWidth="168.0" text="⚠ Versión Beta 1.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="149.0" fitWidth="140.0" layoutX="17.0" layoutY="-30.0">
+         <image>
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/logo%20completo%20con%20íc.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="429.0" layoutY="490.0" prefHeight="24.0" prefWidth="288.0" text="Acceso exclusivo para personal autorizado" textFill="WHITE">
+         <font>
+            <Font name="Arial Narrow" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="54.0" fitWidth="52.0" layoutX="117.0" layoutY="152.0">
+         <image>
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/ícono%20de%20Facebook%20es.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="52.0" layoutX="178.0" layoutY="152.0">
+         <image>
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/ícono%20estilizado%20de%20correo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
