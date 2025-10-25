@@ -28,21 +28,6 @@ public void start(Stage primaryStage) {
 }
 
     }
-    
-    public void start2(Stage secondStage){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Application/Interfaz1.fxml"));
-            Scene scene = new Scene(loader.load(), 800, 600);
-            secondStage.setTitle("MiBus");
-            
-
-            secondStage.setScene(scene);
-           secondStage.show();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void main(String[] args) {
         launch(args);

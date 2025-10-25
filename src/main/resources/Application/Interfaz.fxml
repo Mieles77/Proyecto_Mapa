@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.canvas.*?>
 <?import java.lang.*?>
@@ -23,120 +25,72 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #b3d9ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Logica.Controller">
-   <top>
-      <HBox prefHeight="98.0" prefWidth="800.0" style="-fx-background-color: #E3F2FD;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="85.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/aqui.jpg" />
-               </image>
-               <HBox.margin>
-                  <Insets left="15.0" top="5.0" />
-               </HBox.margin>
-            </ImageView>
-            <Label text="Valledupar" textFill="#0d47a1">
-               <HBox.margin>
-                  <Insets left="14.0" top="20.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Arial Bold" size="51.0" />
-               </font>
-            </Label>
-            <Pane prefHeight="130.0" prefWidth="259.0">
-               <children>
-                  <Line endX="320.60003662109375" endY="13.599990844726562" layoutX="101.0" layoutY="85.0" startX="-474.20001220703125" startY="13.599990844726562" stroke="#3f7fb0" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Pane>
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </HBox>
-   </top>
-   <left>
-      <VBox prefHeight="470.0" prefWidth="297.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" style="-fx-background-color: #2E7CFB;" text="Buscar Ruta" textFill="WHITE">
-               <VBox.margin>
-                  <Insets bottom="-11.0" left="25.0" top="37.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #2E7CFB;" text="Ver Todas las rutas" textFill="WHITE">
-               <VBox.margin>
-                  <Insets left="145.0" top="-20.0" />
-               </VBox.margin>
-            </Button>
-            <Label text="Panel de Busqueda" textFill="#0d47a1">
-               <VBox.margin>
-                  <Insets left="25.0" top="25.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="Microsoft Sans Serif" size="18.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="49.0" prefWidth="298.0">
-               <children>
-                  <TextField fx:id="origen" prefHeight="51.0" prefWidth="253.0" promptText="Origen">
-                     <HBox.margin>
-                        <Insets left="25.0" top="15.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="63.0" prefWidth="298.0">
-               <children>
-                  <TextField fx:id="destino" prefHeight="34.0" prefWidth="252.0" promptText="Destino">
-                     <HBox.margin>
-                        <Insets left="25.0" top="5.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <Button mnemonicParsing="false" onAction="#BuscarRuta" prefHeight="22.0" prefWidth="63.0" style="-fx-background-color: #2E7CFB;" text="Buscar" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="210.0" top="-19.0" />
-               </VBox.margin>
-            </Button>
-            <Label text="Lista de Resultados" textFill="#0d47a1">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="25.0" top="25.0" />
-               </VBox.margin>
-            </Label>
-            <HBox prefHeight="133.0" prefWidth="298.0">
-               <children>
-                  <ListView fx:id="resultados" prefHeight="296.0" prefWidth="528.0">
-                     <HBox.margin>
-                        <Insets left="25.0" top="15.0" />
-                     </HBox.margin>
-                  </ListView>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </left>
-   <right>
-      <Pane prefHeight="405.0" prefWidth="222.0" BorderPane.alignment="CENTER">
-         <children>
-            <Line endX="-350.0000228881836" endY="422.1999816894531" layoutX="101.0" layoutY="21.0" startX="-350.0000228881836" startY="14.399984359741211" stroke="#07437f" />
-            <ImageView fitHeight="413.0" fitWidth="385.0" layoutX="-170.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/ruta100.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </right>
-</BorderPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="101.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.6359223300970873" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#1e5cfa31" />
+                  <Stop color="#ffffff82" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="507.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="0.5825242718446603" endY="0.10194174757281553" startX="0.6019417475728155" startY="0.941747572815534">
+               <stops>
+                  <Stop color="#1c3068" />
+                  <Stop color="#0099ffdb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TextField fx:id="origen" layoutX="25.0" layoutY="237.0" prefHeight="34.0" prefWidth="308.0" promptText="Origen" style="-fx-background-radius: 15;" />
+      <TextField fx:id="destino" layoutX="25.0" layoutY="283.0" prefHeight="34.0" prefWidth="308.0" promptText="Destino" style="-fx-background-radius: 15;" />
+      <Button layoutX="270.0" layoutY="328.0" mnemonicParsing="false" onAction="#BuscarRuta" prefHeight="22.0" prefWidth="63.0" style="-fx-background-color: #000B58;" text="Buscar" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <ListView fx:id="resultados" layoutX="25.0" layoutY="403.0" prefHeight="157.0" prefWidth="253.0" />
+      <Button layoutX="25.0" layoutY="145.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #000B58;" text="Buscar Ruta" textFill="WHITE" />
+      <Button layoutX="166.0" layoutY="145.0" mnemonicParsing="false" style="-fx-background-color: #000B58;" text="Ver Todas las rutas" textFill="WHITE" />
+      <Label layoutX="24.0" layoutY="210.0" text="Panel de Busqueda" textFill="WHITE">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="373.0" text="Lista de Resultados" textFill="WHITE">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <Line endY="-220.0" layoutX="359.0" layoutY="317.0" startY="280.0" />
+      <ImageView fitHeight="453.0" fitWidth="378.0" layoutX="394.0" layoutY="123.0">
+         <effect>
+            <Blend />
+         </effect>
+         <image>
+            <Image url="@../Images/ruta100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="-47.0">
+         <image>
+            <Image url="@../Images/mibuslogo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="643.0" layoutY="32.0" mnemonicParsing="false" onAction="#irLogin" prefHeight="34.0" prefWidth="157.0" style="-fx-background-color: transparent;" text="Iniciar Sesión" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

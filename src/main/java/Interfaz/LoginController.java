@@ -18,6 +18,7 @@ import javafx.stage.Stage;
  * @author sebas
  */
 public class LoginController {
+    
  
     
       @FXML
@@ -33,5 +34,20 @@ public class LoginController {
         window.show();
     }
     
+    @FXML
+     void irAdminLogin(ActionEvent actionEvent) throws IOException{
+        
+        Parent LoginAdmin =  FXMLLoader.load(getClass().getResource("/application/LoginAdmin.fxml"));
+        Scene AdminScene = new Scene(LoginAdmin);
+        
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        
+        window.setScene(AdminScene);
+        window.show();
+    }
+    
+ 
+    
     
 }
+

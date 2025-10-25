@@ -72,7 +72,8 @@ public class Controller {
             datosRuta.add(mejorBus);
         }
     }
-    @FXML
+    
+        @FXML
     void irLogin(ActionEvent actionEvent) throws IOException{
         
        Parent Login = FXMLLoader.load(getClass().getResource("/Application/Login.fxml"));
@@ -86,4 +87,5 @@ public class Controller {
         window.show();
        
     }
+      
 }

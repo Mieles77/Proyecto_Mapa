@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
@@ -26,6 +27,9 @@
          <effect>
             <DropShadow />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" layoutX="346.0" stroke="#1c58fc92" strokeType="INSIDE" width="454.0">
          <fill>
@@ -47,13 +51,16 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="478.0" layoutY="446.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-background-radius: 40; -fx-border-radius: 30%; -fx-border-color: #FDFAF6;" text="Administrador" textFill="WHITE">
+      <Button onAction="#irAdminLogin" layoutX="478.0" layoutY="446.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-background-radius: 40; -fx-border-radius: 30%; -fx-border-color: #FDFAF6;" text="Administrador" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.5" />
          </font>
          <effect>
             <Blend />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Label layoutX="15.0" layoutY="242.0" prefHeight="24.0" prefWidth="163.0" text="Escriba sus datos">
          <font>
