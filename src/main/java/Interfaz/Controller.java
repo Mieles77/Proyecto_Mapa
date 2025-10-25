@@ -1,5 +1,7 @@
-package Logica;
+package Interfaz;
 
+import Logica.GrafoRutas;
+import Logica.PruebaRutas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
