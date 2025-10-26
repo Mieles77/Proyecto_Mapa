@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.*;
+import Logica.Parada;
 
 public class GrafoRutas {
     private Map<Parada, ArrayList<Parada>> listaParadas;

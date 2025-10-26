@@ -1,14 +1,22 @@
 package Interfaz;
 
 import Logica.GrafoRutas;
+import Logica.GrafoRutas;
 import Logica.PruebaRutas;
+import Logica.PruebaRutas;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 // Archivo: Controller.java (MODIFICADO)
 
@@ -64,4 +72,20 @@ public class Controller {
             datosRuta.add(mejorBus);
         }
     }
+    
+        @FXML
+    void irLogin(ActionEvent actionEvent) throws IOException{
+        
+       Parent Login = FXMLLoader.load(getClass().getResource("/Application/Login.fxml"));
+       Scene LoginScene = new Scene(Login);
+       
+         // Obtener el Stage actual
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        // Cambiar la escena
+        window.setScene(LoginScene);
+        window.show();
+       
+    }
+      
 }
