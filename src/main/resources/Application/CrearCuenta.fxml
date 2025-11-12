@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="792.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.LoginController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="690.0" style="-fx-background-color: #F7F7F7;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="529.0" layoutX="121.0" layoutY="156.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-width: 50; -fx-arc-height: 50;" width="444.0">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" radius="30.2125" width="101.85" />
+               </effect>
+            </Rectangle>
+            <TextField fx:id="correo" layoutX="141.0" layoutY="385.0" prefHeight="44.0" prefWidth="404.0" promptText="tu@gmail.com" style="-fx-background-color: #F5F5F5; -fx-background-radius: 10; -fx-padding: 0 0 0 40;" />
+            <PasswordField fx:id="contraseña" layoutX="139.0" layoutY="470.0" prefHeight="44.0" prefWidth="396.0" promptText="***********" style="-fx-background-color: #F5F5F5; -fx-background-radius: 10; -fx-padding: 0 0 0 40;" />
+            <Label layoutX="182.0" layoutY="161.0" prefHeight="96.0" prefWidth="309.0" text="Crear cuenta">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="45.0" />
+               </font>
+            </Label>
+            <Label layoutX="143.0" layoutY="446.0" prefHeight="24.0" prefWidth="163.0" text="Contraseña" textFill="#000000d6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="243.0" fitWidth="224.0" layoutX="13.0" layoutY="-52.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/logo%20completo%20con%20íc.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="7.0" layoutY="734.0" prefHeight="59.0" prefWidth="236.0" text="⚠ Versión Beta 2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="358.0" prefHeight="34.0" prefWidth="236.0" text="Correo electronico" textFill="#000000d5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button focusTraversable="false" layoutX="143.0" layoutY="605.0" mnemonicParsing="false" onAction="#irPrincipalAdmin_Crearcuenta" prefHeight="34.0" prefWidth="404.0" style="-fx-background-color: #1B56FD; -fx-background-radius: 10;" text="Crear cuenta" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="148.0" layoutY="240.0" prefHeight="34.0" prefWidth="343.0" text="Ingrese sus datos para crear la cuenta" textFill="GREY">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="143.0" layoutY="397.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/dame%20esa%20imagen%20en%20p.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="146.0" layoutY="477.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/candado%20con%20un%20color.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="nombre" layoutX="135.0" layoutY="308.0" prefHeight="44.0" prefWidth="404.0" promptText="nombre" style="-fx-background-color: #F5F5F5; -fx-background-radius: 10; -fx-padding: 0 0 0 40;" />
+            <Label layoutX="140.0" layoutY="274.0" prefHeight="34.0" prefWidth="236.0" text="Nombre" textFill="#000000d5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="139.0" layoutY="534.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="444.0" style="-fx-background-color: transparent;" text="Acepto el uso de mis datos con el fin de una mejor experiencia">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <ImageView fitHeight="34.0" fitWidth="24.0" layoutX="146.0" layoutY="313.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/iconoUsuario.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="mensajeError" layoutX="284.0" layoutY="367.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Este campo no puede estar vacio" wrappingWidth="276.31298828125">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mensajeError1" layoutX="284.0" layoutY="440.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Este campo no puede estar vacio" wrappingWidth="276.31298828125">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mensajeError2" layoutX="284.0" layoutY="516.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Este campo no puede estar vacio" wrappingWidth="276.31298828125">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d3c99" height="792.0" layoutX="690.0" stroke="TRANSPARENT" strokeType="INSIDE" width="846.0" />
+      <ImageView fitHeight="792.0" fitWidth="848.0" layoutX="690.0" opacity="0.54">
+         <image>
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/Diseño%20de%20interfaz%20d.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

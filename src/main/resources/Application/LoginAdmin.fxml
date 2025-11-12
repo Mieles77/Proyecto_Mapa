@@ -1,58 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.LoginController">
+<Pane prefHeight="792.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.LoginController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d3c99" height="792.0" stroke="TRANSPARENT" strokeType="INSIDE" width="846.0" />
+      <Pane layoutX="846.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="690.0" style="-fx-background-color: #396aff;">
          <children>
-            <ImageView fitHeight="600.0" fitWidth="807.0" layoutX="-1.0">
+            <ImageView fitHeight="795.0" fitWidth="691.0">
                <image>
-                  <Image url="@../Images/crear%20una%20imagen%20de%20.png" />
+                  <Image url="@../Images/fondo%20con%20nubes%20y%20es.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="216.0" layoutY="103.0" opacity="0.69" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50; -fx-fill: blac;" width="370.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#396aff" height="529.0" layoutX="121.0" layoutY="156.0" stroke="#041957" strokeType="INSIDE" strokeWidth="0.6" style="-fx-arc-width: 50; -fx-arc-height: 50;" width="444.0">
                <effect>
-                  <GaussianBlur radius="18.45" />
+                  <DropShadow blurType="GAUSSIAN" color="#3a59ae" height="95.64" radius="52.760000000000005" spread="0.27" width="117.4" />
                </effect>
             </Rectangle>
-            <PasswordField layoutX="245.0" layoutY="335.0" opacity="0.58" prefHeight="31.0" prefWidth="298.0" promptText="**********" style="-fx-background-color: grey;">
-               <effect>
-                  <GaussianBlur radius="0.0" />
-               </effect></PasswordField>
-            <Button onAction="#irPrincipal" layoutX="313.0" layoutY="405.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: red; -fx-background-radius: 40; -fx-border-radius: 30%;" text="Iniciar Sesion" textFill="WHITE">
+            <TextField fx:id="correo" layoutX="140.0" layoutY="319.0" prefHeight="44.0" prefWidth="404.0" promptText="tu@gmail.com" style="-fx-background-color: #6e92ff; -fx-background-radius: 10; -fx-padding: 0 0 0 40; -fx-prompt-text-fill: white;" />
+            <PasswordField fx:id="contraseña" layoutX="143.0" layoutY="397.0" prefHeight="44.0" prefWidth="396.0" promptText="***********" style="-fx-background-color: #6e92ff; -fx-background-radius: 10; -fx-padding: 0 0 0 40; -fx-prompt-text-fill: white;" />
+            <Label layoutX="182.0" layoutY="161.0" prefHeight="96.0" prefWidth="309.0" text="Iniciar Sesion" textFill="WHITE">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="16.5" />
+                  <Font name="Arial Rounded MT Bold" size="45.0" />
                </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="373.0" prefHeight="24.0" prefWidth="163.0" text="Contraseña" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="453.0" layoutY="727.0" prefHeight="59.0" prefWidth="236.0" text="⚠ Versión Beta 2.0" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="285.0" prefHeight="34.0" prefWidth="236.0" text="Correo electronico" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button focusTraversable="false" layoutX="143.0" layoutY="474.0" mnemonicParsing="false" onAction="#irPrincipalAdmin" prefHeight="34.0" prefWidth="404.0" style="-fx-background-color: RED; -fx-background-radius: 10;" text="Iniciar Sesion" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
             </Button>
-            <ImageView fitHeight="158.0" fitWidth="156.0" layoutX="322.0" layoutY="76.0">
+            <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="147.0" layoutY="332.0">
                <image>
-                  <Image url="@../Images/mibuslogo.png" />
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/dame%20esa%20imagen%20en%20p.png" />
                </image>
             </ImageView>
-            <TextField layoutX="244.0" layoutY="294.0" opacity="0.61" prefHeight="31.0" prefWidth="298.0" promptText="Correo electronico" style="-fx-background-color: grey;" />
-            <Label layoutX="278.0" layoutY="190.0" text="Iniciar Sesion" textFill="WHITE">
+            <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="151.0" layoutY="404.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/candado%20con%20un%20color.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="217.0" fitWidth="309.0" layoutX="393.0" layoutY="-29.0">
+               <image>
+                  <Image url="@../Images/logo_miBus(blanco).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="146.0" layoutY="240.0" prefHeight="34.0" prefWidth="343.0" text="Accede para administrar MiBus" textFill="#cdcdcd">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="37.0" />
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="274.0" layoutY="228.0" text="Administrador" textFill="WHITE">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="37.0" />
-               </font>
-            </Label>
+            <AnchorPane fx:id="mensajeError" layoutX="324.0" layoutY="379.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="205.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="3.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Completa este campo" wrappingWidth="211.31298828125">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mensajeError1" layoutX="324.0" layoutY="456.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="205.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="3.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Completa este campo" wrappingWidth="211.31298828125">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </Pane>
+      <ImageView fitHeight="792.0" fitWidth="848.0">
+         <image>
+            <Image url="@../Images/imagenenBlanco.png" />
+         </image>
+      </ImageView>
    </children>
-</StackPane>
+</Pane>

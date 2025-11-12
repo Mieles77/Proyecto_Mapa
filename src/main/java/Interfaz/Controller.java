@@ -16,13 +16,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-// Archivo: Controller.java (MODIFICADO)
 
 public class Controller {
     private int menor = 999999;
-    private String mejorBus = "Ruta no disponible"; // Inicializar con mensaje por defecto
+    private String mejorBus = "Ruta no disponible"; 
 
     @FXML private ListView<String> resultados;
     private ObservableList<String> datosRuta;
@@ -31,8 +30,20 @@ public class Controller {
     private TextField origen;
     @FXML
     private TextField destino;
+    @FXML
+    private AnchorPane mensajeError;
+    @FXML
+    private AnchorPane mensajeError1;
     
-    // 1. Inicializa la lista Observable solo una vez (al cargar el FXML)
+    public String getOrigen(){
+        return origen.getText();
+    }
+    
+    public String getDestino(){
+        return destino.getText();
+    }
+    
+    
     @FXML 
     public void initialize() {
         datosRuta = FXCollections.observableArrayList();
@@ -41,29 +52,39 @@ public class Controller {
     
     @FXML
     void BuscarRuta(ActionEvent event) {
+        
+         if(getOrigen().isEmpty()){
+            mensajeError.setVisible(true);
+            return;
+        }
+         mensajeError.setVisible(false);
+        
+        if(getDestino().isEmpty()){
+            mensajeError1.setVisible(true);
+            return;
+        }
+        mensajeError1.setVisible(false);
+        
         String pOrigen = origen.getText().trim();
         String pDestino = destino.getText().trim();
 
-        // Limpiar y resetear el estado en cada búsqueda
+        
         datosRuta.clear();
         menor = 999999;
         mejorBus = "Ruta no disponible";
         
-        // 2. Ineficiencia: Se recomienda crear 'prueba' una sola vez en el constructor/initialize
         PruebaRutas prueba = new PruebaRutas(); 
         
         for (GrafoRutas bus: prueba.getBuses()){
-            // 3. Solo llama a numeroParadas una vez por eficiencia
+
             int pasos = bus.numeroParadas(pOrigen, pDestino);
             
-            // 4. Lógica de comparación: Solo si pasos es válido (>= 0)
             if (pasos >= 0 && pasos < menor){
                 menor = pasos;
-                mejorBus = bus.getId(); // Usas getId() del GrafoRutas
+                mejorBus = bus.getId(); 
             }
         }
         
-        // 5. Mostrar resultados
         if (menor != 999999) {
             datosRuta.add("¡Mejor Ruta Encontrada!");
             datosRuta.add("Bus: " + mejorBus);
@@ -72,6 +93,7 @@ public class Controller {
             datosRuta.add(mejorBus);
         }
     }
+    
     
         @FXML
     void irLogin(ActionEvent actionEvent) throws IOException{
@@ -85,7 +107,35 @@ public class Controller {
         // Cambiar la escena
         window.setScene(LoginScene);
         window.show();
-       
     }
-      
+    
+        @FXML
+    void buscarRutas(ActionEvent event) throws IOException{
+        
+       
+        Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/Interfaz1.fxml"));
+        Scene principalScene = new Scene(principalRoot);
+
+        // Obtener el Stage actual
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Cambiar la escena
+        window.setScene(principalScene);
+        window.show();
+    }
+    
+     @FXML
+    void verRutas(ActionEvent Event) throws IOException{
+        
+        Parent Rutas = FXMLLoader.load(getClass().getResource("/Application/verRutas1.fxml"));
+        Scene Escena = new Scene(Rutas);
+        
+         // Obtener el Stage actual
+        Stage window = (Stage) ((Node) Event.getSource()).getScene().getWindow();
+
+        // Cambiar la escena
+        window.setScene(Escena);
+        window.show();
+    }
+       
 }

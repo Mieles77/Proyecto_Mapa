@@ -18,13 +18,14 @@ public void start(Stage primaryStage) {
         try{
             
             FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
-            Scene scene1 = new Scene(loader1.load(), 800, 600);
+            Scene scene1 = new Scene(loader1.load());
             primaryStage.setTitle("MiBus");
             
             primaryStage.setScene(scene1);
+            primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (IOException e) {
-    e.printStackTrace(); // Esto imprime el error en la consola
+             e.printStackTrace(); // Esto imprime el error en la consola
 }
 
     }

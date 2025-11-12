@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -10,72 +11,126 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1536.0" style="-fx-background-color: #1B56FD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="101.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="0.6359223300970873" startX="1.0" startY="1.0">
-               <stops>
-                  <Stop color="#1e5cfa31" />
-                  <Stop color="#ffffff82" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="507.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
-         <fill>
-            <LinearGradient endX="0.5825242718446603" endY="0.10194174757281553" startX="0.6019417475728155" startY="0.941747572815534">
-               <stops>
-                  <Stop color="#1c3068" />
-                  <Stop color="#0099ffdb" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <TextField fx:id="origen" layoutX="25.0" layoutY="237.0" prefHeight="34.0" prefWidth="308.0" promptText="Origen" style="-fx-background-radius: 15;" />
-      <TextField fx:id="destino" layoutX="25.0" layoutY="283.0" prefHeight="34.0" prefWidth="308.0" promptText="Destino" style="-fx-background-radius: 15;" />
-      <Button layoutX="270.0" layoutY="328.0" mnemonicParsing="false" onAction="#BuscarRuta" prefHeight="22.0" prefWidth="63.0" style="-fx-background-color: #000B58;" text="Buscar" textFill="WHITE">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <ListView fx:id="resultados" layoutX="25.0" layoutY="403.0" prefHeight="157.0" prefWidth="253.0" />
-      <Button layoutX="25.0" layoutY="145.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #000B58;" text="Buscar Ruta" textFill="WHITE" />
-      <Button layoutX="166.0" layoutY="145.0" mnemonicParsing="false" style="-fx-background-color: #000B58;" text="Ver Todas las rutas" textFill="WHITE" />
-      <Label layoutX="24.0" layoutY="210.0" text="Panel de Busqueda" textFill="WHITE">
-         <font>
-            <Font name="Microsoft Sans Serif" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="24.0" layoutY="373.0" text="Lista de Resultados" textFill="WHITE">
-         <font>
-            <Font name="Microsoft Sans Serif" size="18.0" />
-         </font>
-      </Label>
-      <Line endY="-220.0" layoutX="359.0" layoutY="317.0" startY="280.0" />
-      <ImageView fitHeight="453.0" fitWidth="378.0" layoutX="394.0" layoutY="123.0">
-         <image>
-            <Image url="@../Images/ruta100.png" />
-         </image>
+      <ImageView fitHeight="491.0" fitWidth="726.0" layoutY="199.0" opacity="0.16">
          <effect>
-            <Blend />
+            <Glow />
          </effect>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="-47.0">
          <image>
-            <Image url="@../Images/mibuslogo.png" />
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/edificio1.png" />
          </image>
       </ImageView>
-      <Button layoutX="643.0" layoutY="32.0" mnemonicParsing="false" onAction="#irLogin" prefHeight="34.0" prefWidth="157.0" style="-fx-background-color: transparent;" text="Iniciar Sesión" underline="true">
-         <font>
-            <Font size="19.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+      
+      <!-- Área de contenido dinámico -->
+      <AnchorPane fx:id="contentArea" layoutX="137.0" layoutY="139.0" prefHeight="626.0" prefWidth="482.0" style="-fx-background-color: TRANSPARENT;">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="482.0" style="-fx-background-color: transparent;">
+               <children>
+                  <Label layoutX="34.0" layoutY="105.0" text="Panel de busqueda" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="37.0" layoutY="319.0" text="lista de resultados" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="resultados" layoutX="30.0" layoutY="352.0" prefHeight="258.0" prefWidth="421.0" style="-fx-background-radius: 30; -fx-background-color: #2f7af9;" />
+                  <Pane layoutX="22.0" layoutY="126.0" prefHeight="176.0" prefWidth="439.0">
+                     <children>
+                        <TextField fx:id="destino" layoutX="9.0" layoutY="68.0" prefHeight="40.0" prefWidth="421.0" promptText="Destino" style="-fx-padding: 0 0 0 40; -fx-background-radius: 10;" />
+                        <TextField fx:id="origen" layoutX="9.0" layoutY="14.0" prefHeight="40.0" prefWidth="421.0" promptText="Origen" style="-fx-padding: 0 0 0 40; -fx-background-radius: 10;" />
+                        <ImageView fitHeight="40.0" fitWidth="29.0" layoutX="14.0" layoutY="68.0" opacity="0.95">
+                           <image>
+                              <Image url="@../Images/iconoUbicacion.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="29.0" layoutX="14.0" layoutY="14.0" opacity="0.95">
+                           <image>
+                              <Image url="@../Images/iconoUbicacion.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="9.0" layoutY="122.0" mnemonicParsing="false" onAction="#BuscarRuta" prefHeight="40.0" prefWidth="421.0" style="-fx-background-radius: 10; -fx-background-color: #0000b5;" text="Buscar" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane fx:id="mensajeError1" layoutX="190.0" layoutY="125.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Rectangle>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                              <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Este campo no puede estar vacio" wrappingWidth="276.31298828125">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                                 <image>
+                                    <Image url="@../Images/pngwing.com.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="54.0" layoutY="30.0" prefHeight="46.0" prefWidth="365.0" style="-fx-background-color: #1655e7; -fx-background-radius: 155;">
+                     <children>
+                        <Button layoutX="5.0" layoutY="4.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="179.0" style="-fx-background-color: #0000b5; -fx-background-radius: 155;" text="Buscar ruta" />
+                        <Button layoutX="187.0" layoutY="4.0" mnemonicParsing="false" onAction="#verRutas" prefHeight="36.0" prefWidth="164.0" style="-fx-background-color: transparent; -fx-background-radius: 155;" text="Ver todas las rutas">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <AnchorPane fx:id="mensajeError" layoutX="222.0" layoutY="90.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Rectangle>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                        <Text fill="WHITE" layoutX="8.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Este campo no puede estar vacio" wrappingWidth="276.31298828125">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="9.0" layoutY="7.0">
+                           <image>
+                              <Image url="@../Images/pngwing.com.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      
+      <!-- Header blanco con logo y botones -->
+      <Pane prefHeight="111.0" prefWidth="1536.0" style="-fx-background-color: white;">
+         <children>
+            <!-- Logo -->
+            <ImageView fitHeight="225.0" fitWidth="218.0" layoutX="14.0" layoutY="-57.0">
+               <image>
+                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/logo%20completo%20con%20íc.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="681.0" fitWidth="811.0" layoutX="726.0" layoutY="111.0">
+         <image>
+            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/imagen_Interfaces.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
