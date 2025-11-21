@@ -7,6 +7,8 @@ package Interfaz;
 import Logica.Administrador;
 import Logica.Usuario;
 import java.io.IOException;
+
+import Datos.bdUsuarios;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +38,8 @@ public class LoginController {
         private AnchorPane mensajeError1;
         @FXML
         private AnchorPane mensajeError2;
+
+        private bdUsuarios bdUsuarios = new bdUsuarios("Usuarios.txt");
         
     public String getCorreo() {
         return correo.getText();
@@ -77,15 +81,17 @@ public class LoginController {
         
         else{
         
-    Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/Interfaz1.fxml"));
-    Scene principalScene = new Scene(principalRoot);
+            if (bdUsuarios.buscarUsuario(getCorreo(), getContraseña())){
+                Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/Interfaz1.fxml"));
+                Scene principalScene = new Scene(principalRoot);
 
-        // Obtener el Stage actual
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                // Obtener el Stage actual
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        // Cambiar la escena
-        window.setScene(principalScene);
-        window.show();
+                // Cambiar la escena
+                window.setScene(principalScene);
+                window.show();
+            }
         }
     }
     
@@ -168,7 +174,7 @@ public class LoginController {
         
         mensajeError2.setVisible(false);
         
-
+        bdUsuarios.agregarUsuario(getCorreo(), getContraseña());
         
         Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/Interfaz1.fxml"));
         Scene principalScene = new Scene(principalRoot);
