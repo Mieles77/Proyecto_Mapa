@@ -37,7 +37,7 @@ public class bdUsuarios {
             String lectura = null;
             do {
                 lectura = entrada.readLine();
-                if(lectura.contains(usu)){
+                if(lectura.equals(usu)){
                     return true;
                 }
             } while (lectura != null);

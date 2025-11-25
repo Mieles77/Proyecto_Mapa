@@ -1,13 +1,31 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PruebaRutas {
+import Datos.BdRutas;
 
-    private List<GrafoRutas> buses = new ArrayList<GrafoRutas>();
+
+public class PruebaRutas implements Serializable{
+
+    private List<GrafoRutas> rutas = new ArrayList<GrafoRutas>();
+    private static PruebaRutas instancia = null;
+    private String archivo = "Rutas.dat";
+    private BdRutas persistencia = new BdRutas(archivo);
+    
 
     public PruebaRutas() {
+        ArrayList<GrafoRutas> rutasRegistradas = persistencia.leerBd();
+        if(rutasRegistradas.isEmpty()){
+            rutasPorDefecto();
+        }
+        else{
+            this.rutas = rutasRegistradas;
+        }
+    }
+
+    public void rutasPorDefecto(){
         GrafoRutas bus101 = new GrafoRutas("Bus101");
         bus101.agregarParada(new Parada("Nevada"));
         bus101.agregarParada(new Parada("Fundadores"));
@@ -35,11 +53,26 @@ public class PruebaRutas {
         bus102.conectar("Nevada","UNAD");
         bus102.conectar("UNAD","Area Andina");
         
-        buses.add(bus101);
-        buses.add(bus102);
+        rutas.add(bus101);
+        rutas.add(bus102);
     }
 
-    public List<GrafoRutas> getBuses(){
-        return this.buses;
+    public List<GrafoRutas> getRutas(){
+        return this.rutas;
+    }
+
+    public void adicionarRuta(GrafoRutas ruta){
+        this.rutas.add(ruta);
+    }
+
+    public static PruebaRutas getinstancia(){
+        if(instancia == null){
+            instancia = new PruebaRutas();
+        }
+        return instancia;
+    }
+
+    public void guardarCambios(){
+        persistencia.agregarBd((ArrayList<GrafoRutas>)this.rutas);
     }
 }

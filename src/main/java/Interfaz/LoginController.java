@@ -39,6 +39,9 @@ public class LoginController {
         @FXML
         private AnchorPane mensajeError2;
 
+        private String usuarioAdmin = "Admin";
+        private String claveAdmin = "Admin12345";
+
         private bdUsuarios bdUsuarios = new bdUsuarios("Usuarios.txt");
         
     public String getCorreo() {
@@ -108,15 +111,18 @@ public class LoginController {
             return;
         }
         
-        Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/InterfazAdmin.fxml"));
-        Scene principalScene = new Scene(principalRoot);
+        if (getCorreo().equals(usuarioAdmin) && getContraseña().equals(claveAdmin)){
+            Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/AdminInterfaz.fxml"));
+            Scene principalScene = new Scene(principalRoot);
 
-        // Obtener el Stage actual
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Obtener el Stage actual
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        // Cambiar la escena
-        window.setScene(principalScene);
-        window.show();
+            // Cambiar la escena
+            window.setScene(principalScene);
+            window.show();
+        }
+        
     }
     
     @FXML

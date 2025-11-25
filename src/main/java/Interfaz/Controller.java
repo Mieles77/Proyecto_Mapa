@@ -73,15 +73,15 @@ public class Controller {
         menor = 999999;
         mejorBus = "Ruta no disponible";
         
-        PruebaRutas prueba = new PruebaRutas(); 
+        PruebaRutas bdRutas = PruebaRutas.getinstancia(); 
         
-        for (GrafoRutas bus: prueba.getBuses()){
+        for (GrafoRutas ruta: bdRutas.getRutas()){
 
-            int pasos = bus.numeroParadas(pOrigen, pDestino);
+            int pasos = ruta.numeroParadas(pOrigen, pDestino);
             
             if (pasos >= 0 && pasos < menor){
                 menor = pasos;
-                mejorBus = bus.getId(); 
+                mejorBus = ruta.getId(); 
             }
         }
         

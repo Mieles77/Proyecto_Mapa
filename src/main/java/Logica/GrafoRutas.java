@@ -1,8 +1,9 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class GrafoRutas {
+public class GrafoRutas implements Serializable{
     private Map<Parada, ArrayList<Parada>> listaParadas;
     private Map<String, Parada> traductor;
     private String idRuta;

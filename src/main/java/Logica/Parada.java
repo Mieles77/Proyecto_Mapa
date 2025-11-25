@@ -1,8 +1,9 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Parada {
+public class Parada implements Serializable{
     private String id;
 
     public Parada(String id){
