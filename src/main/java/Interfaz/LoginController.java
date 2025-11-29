@@ -38,6 +38,8 @@ public class LoginController {
         private AnchorPane mensajeError1;
         @FXML
         private AnchorPane mensajeError2;
+        @FXML
+        private AnchorPane mensajeError3;
 
         private String usuarioAdmin = "Admin";
         private String claveAdmin = "Admin12345";
@@ -61,7 +63,7 @@ public class LoginController {
         if(getCorreo().isEmpty()){
             mensajeError.setVisible(true);
             
-            // 🔽 Detectar clic en cualquier parte de la ventana
+        // 🔽 Detectar clic en cualquier parte de la ventana
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setOnMousePressed(e -> mensajeError.setVisible(false));
         
@@ -95,6 +97,11 @@ public class LoginController {
                 window.setScene(principalScene);
                 window.show();
             }
+            else{
+                mensajeError3.setVisible(true);
+                return;
+            }
+            mensajeError3.setVisible(false);
         }
     }
     
@@ -105,11 +112,13 @@ public class LoginController {
             mensajeError.setVisible(true);
             return;
         }
+        mensajeError.setVisible(false);
         
         if(getContraseña().isEmpty()){
             mensajeError1.setVisible(true);
             return;
         }
+        mensajeError1.setVisible(false);
         
         if (getCorreo().equals(usuarioAdmin) && getContraseña().equals(claveAdmin)){
             Parent principalRoot = FXMLLoader.load(getClass().getResource("/Application/AdminInterfaz.fxml"));
@@ -122,7 +131,11 @@ public class LoginController {
             window.setScene(principalScene);
             window.show();
         }
-        
+        else{
+            mensajeError3.setVisible(true);
+            return;
+        }
+        mensajeError3.setVisible(false);
     }
     
     @FXML

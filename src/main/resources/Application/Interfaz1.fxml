@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1536.0" style="-fx-background-color: #1B56FD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1536.0" style="-fx-background-color: #1B56FD;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaz.Controller">
    <children>
       <ImageView fitHeight="491.0" fitWidth="726.0" layoutY="199.0" opacity="0.16">
          <effect>
             <Glow />
          </effect>
          <image>
-            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/edificio1.png" />
+            <Image url="@../Images/edificio1.png" />
          </image>
       </ImageView>
       
@@ -37,7 +41,7 @@
                         <Font name="Arial Rounded MT Bold" size="17.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="resultados" layoutX="30.0" layoutY="352.0" prefHeight="258.0" prefWidth="421.0" style="-fx-background-radius: 30; -fx-background-color: #2f7af9;" />
+                  <ListView fx:id="resultados" layoutX="30.0" layoutY="352.0" prefHeight="258.0" prefWidth="421.0" style="-fx-background-radius: 0; -fx-background-color: #2f7af9;" />
                   <Pane layoutX="22.0" layoutY="126.0" prefHeight="176.0" prefWidth="439.0">
                      <children>
                         <TextField fx:id="destino" layoutX="9.0" layoutY="68.0" prefHeight="40.0" prefWidth="421.0" promptText="Destino" style="-fx-padding: 0 0 0 40; -fx-background-radius: 10;" />
@@ -115,21 +119,24 @@
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      
-      <!-- Header blanco con logo y botones -->
       <Pane prefHeight="111.0" prefWidth="1536.0" style="-fx-background-color: white;">
          <children>
             <!-- Logo -->
             <ImageView fitHeight="225.0" fitWidth="218.0" layoutX="14.0" layoutY="-57.0">
                <image>
-                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/logo%20completo%20con%20íc.jpg" />
+                  <Image url="@../Images/logo%20completo%20con%20íc.jpg" />
                </image>
             </ImageView>
+            <Button layoutX="1385.0" layoutY="35.0" mnemonicParsing="false" onAction="#irLogin" style="-fx-background-color: transparent;" text="Cerrar Sesion">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <ImageView fitHeight="681.0" fitWidth="811.0" layoutX="726.0" layoutY="111.0">
          <image>
-            <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/imagen_Interfaces.png" />
+            <Image url="@../Images/imagen_Interfaces.png" />
          </image>
       </ImageView>
    </children>

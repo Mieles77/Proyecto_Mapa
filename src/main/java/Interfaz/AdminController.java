@@ -7,11 +7,16 @@ import Datos.BdRutas;
 import Logica.GrafoRutas;
 import Logica.Parada;
 import Logica.PruebaRutas;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
@@ -21,6 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 public class AdminController implements Initializable {
@@ -59,10 +65,7 @@ public class AdminController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         
         casillaOrden.setCellValueFactory(new PropertyValueFactory<>("orden"));
-        
-        
         casillaParada.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        
         
         configurarBotonEliminar();
         
@@ -71,6 +74,11 @@ public class AdminController implements Initializable {
 
         bdRutas = PruebaRutas.getinstancia();
         rutas = FXCollections.observableArrayList();
+        
+        for(GrafoRutas rut: bdRutas.getRutas()){
+    rutas.add(rut.getId());
+}
+        
         listViewRutas.setItems(rutas);
     }
 
@@ -193,4 +201,30 @@ public class AdminController implements Initializable {
             tabla.getItems().clear();
         }
     }
+    @FXML
+    void irLogin(ActionEvent actionEvent) throws IOException{
+        
+       Parent Login = FXMLLoader.load(getClass().getResource("/Application/Login.fxml"));
+       Scene LoginScene = new Scene(Login);
+       
+         // Obtener el Stage actual
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        // Cambiar la escena
+        window.setScene(LoginScene);
+        window.show();
+    }
+    
+    @FXML
+     void irAdminLogin(ActionEvent actionEvent) throws IOException{
+        
+        Parent LoginAdmin =  FXMLLoader.load(getClass().getResource("/Application/Interfaz1.fxml"));
+        Scene AdminScene = new Scene(LoginAdmin);
+        
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        
+        window.setScene(AdminScene);
+        window.show();
+    }
+
 }

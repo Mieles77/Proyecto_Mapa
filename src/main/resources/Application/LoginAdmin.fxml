@@ -59,14 +59,9 @@
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Button>
-            <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="147.0" layoutY="332.0">
-               <image>
-                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/dame%20esa%20imagen%20en%20p.png" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="151.0" layoutY="404.0">
                <image>
-                  <Image url="@../../../../../../Users/sebas/OneDrive/Imágenes/candado%20con%20un%20color.png" />
+                  <Image url="@../Images/IconoCandado.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="217.0" fitWidth="309.0" layoutX="393.0" layoutY="-29.0">
@@ -79,7 +74,27 @@
                   <Font name="Arial Rounded MT Bold" size="16.0" />
                </font>
             </Label>
-            <AnchorPane fx:id="mensajeError" layoutX="324.0" layoutY="379.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+            <AnchorPane fx:id="mensajeError3" layoutX="318.0" layoutY="517.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="45.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="215.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="30.0" layoutX="27.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 45;" width="30.0" />
+                  <Text fill="WHITE" layoutX="26.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario o contraseña no encontrados" wrappingWidth="188.1129150390625">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="2.0" layoutY="9.0">
+                     <image>
+                        <Image url="@../Images/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mensajeError1" layoutX="324.0" layoutY="456.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="205.0">
                      <effect>
@@ -99,7 +114,17 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="mensajeError1" layoutX="324.0" layoutY="456.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
+            <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="150.0" layoutY="404.0">
+               <image>
+                  <Image url="@../Images/IconoCandado.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="145.0" layoutY="330.0">
+               <image>
+                  <Image url="@../Images/IconoCorreo.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="mensajeError" layoutX="334.0" layoutY="389.0" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: transparent;" visible="false">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="37.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="205.0">
                      <effect>
