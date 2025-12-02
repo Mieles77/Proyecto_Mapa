@@ -36,11 +36,11 @@ public class Controller {
     private AnchorPane mensajeError1;
     
     public String getOrigen(){
-        return origen.getText();
+        return origen.getText().toLowerCase();
     }
     
     public String getDestino(){
-        return destino.getText();
+        return destino.getText().toLowerCase();
     }
     
     
@@ -65,8 +65,8 @@ public class Controller {
         }
         mensajeError1.setVisible(false);
         
-        String pOrigen = origen.getText().trim();
-        String pDestino = destino.getText().trim();
+        String pOrigen = origen.getText().trim().toLowerCase();
+        String pDestino = destino.getText().trim().toLowerCase();
 
         
         datosRuta.clear();
@@ -95,7 +95,7 @@ public class Controller {
     }
     
     
-        @FXML
+    @FXML
     void irLogin(ActionEvent actionEvent) throws IOException{
         
        Parent Login = FXMLLoader.load(getClass().getResource("/Application/Login.fxml"));

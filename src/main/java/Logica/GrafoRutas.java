@@ -91,4 +91,9 @@ public class GrafoRutas implements Serializable{
         }
         return ruta.size()-1;
     }
+
+    public List<Parada> paradasTotales(){
+        return new ArrayList<Parada>(this.listaParadas.keySet());
+    }
 }
+

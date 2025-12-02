@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -139,5 +140,20 @@
             <Image url="@../Images/imagen_Interfaces.png" />
          </image>
       </ImageView>
+      <VBox layoutX="893.0" layoutY="163.0" prefHeight="571.0" prefWidth="458.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 50px; -fx-border-width: 5px; -fx-background-radius: 50px;">
+         <children>
+            <ListView fx:id="vistaRuta" prefHeight="572.0" prefWidth="458.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 50px; -fx-border-width: 5px; -fx-background-radius: 50px;" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="225.0" fitWidth="218.0" layoutX="24.0" layoutY="-47.0">
+         <image>
+            <Image url="@../Images/logo%20completo%20con%20íc.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="1395.0" layoutY="45.0" mnemonicParsing="false" onAction="#irLogin" style="-fx-background-color: transparent;" text="Cerrar Sesion">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

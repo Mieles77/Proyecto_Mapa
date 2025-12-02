@@ -7,10 +7,14 @@ package Interfaz;
 import java.io.IOException;
 
 import Logica.GrafoRutas;
+import Logica.Parada;
 import Logica.PruebaRutas;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -38,10 +43,16 @@ public class RutasController  implements Initializable{
     private VBox rutasGuardadas;
     private PruebaRutas bdRutas;
 
+    @FXML
+    private ListView<String> vistaRuta;
+    private ObservableList<String> datos;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         bdRutas = PruebaRutas.getinstancia();
         cargarRutasEnInterfaz();
+        datos = FXCollections.observableArrayList();
+        vistaRuta.setItems(datos);
     }
 
     public void cargarRutasEnInterfaz(){
@@ -86,7 +97,11 @@ public class RutasController  implements Initializable{
 }
 
 private void cargarDetallesDeRuta(GrafoRutas ruta) {
-    
+    vistaRuta.getItems().clear();
+    List<Parada> parada = ruta.paradasTotales();
+    for(Parada par: parada){
+        datos.add(par.getId());
+    }
 }
 
     
@@ -101,6 +116,19 @@ private void cargarDetallesDeRuta(GrafoRutas ruta) {
 
         
         window.setScene(principalScene);
+        window.show();
+    }
+
+    @FXML
+    void irLogin(ActionEvent event) throws IOException{
+        Parent Login = FXMLLoader.load(getClass().getResource("/Application/Login.fxml"));
+        Scene LoginScene = new Scene(Login);
+       
+         // Obtener el Stage actual
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Cambiar la escena
+        window.setScene(LoginScene);
         window.show();
     }
     

@@ -178,19 +178,28 @@ public class AdminController implements Initializable {
 
     @FXML
     void guardarRuta(ActionEvent event) {
-        GrafoRutas ruta = new GrafoRutas(getNombreRuta());
-        String paradaAnterior = null;
-        for (ParadaTabla paradaTabla : datos) {
-            ruta.agregarParada(new Parada(paradaTabla.getNombre()));
-            if(paradaTabla.getOrden()!= 1){
-                ruta.conectar(paradaAnterior, paradaTabla.getNombre());
+        boolean encontrado = false;
+        for(GrafoRutas ruta: bdRutas.getRutas()){
+            if(nombreRuta.getText().equals(ruta.getId())){
+                encontrado = true;
             }
-            paradaAnterior = paradaTabla.getNombre();
         }
-        bdRutas.adicionarRuta(ruta);
-        bdRutas.guardarCambios();
-        for(GrafoRutas rut: bdRutas.getRutas()){
-            rutas.add(rut.getId());
+
+        if(encontrado == false){
+            GrafoRutas ruta = new GrafoRutas(getNombreRuta());
+            String paradaAnterior = null;
+            for (ParadaTabla paradaTabla : datos) {
+                ruta.agregarParada(new Parada(paradaTabla.getNombre().toLowerCase()));
+                if(paradaTabla.getOrden()!= 1){
+                    ruta.conectar(paradaAnterior, paradaTabla.getNombre().toLowerCase());
+                }
+                paradaAnterior = paradaTabla.getNombre().toLowerCase();
+            }
+            bdRutas.adicionarRuta(ruta);
+            bdRutas.guardarCambios();
+            for(GrafoRutas rut: bdRutas.getRutas()){
+                rutas.add(rut.getId());
+            }
         }
         nombreRuta.clear();
         limpiarTabla();
