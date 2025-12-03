@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
@@ -76,8 +77,8 @@ public class AdminController implements Initializable {
         rutas = FXCollections.observableArrayList();
         
         for(GrafoRutas rut: bdRutas.getRutas()){
-    rutas.add(rut.getId());
-}
+            rutas.add(rut.getId());
+        }
         
         listViewRutas.setItems(rutas);
     }
@@ -178,6 +179,11 @@ public class AdminController implements Initializable {
 
     @FXML
     void guardarRuta(ActionEvent event) {
+        if(nombreRuta.getText().isEmpty()){
+            System.out.println("Nombre de la ruta vacio");
+            return;
+        }
+
         boolean encontrado = false;
         for(GrafoRutas ruta: bdRutas.getRutas()){
             if(nombreRuta.getText().equals(ruta.getId())){
@@ -185,21 +191,29 @@ public class AdminController implements Initializable {
             }
         }
 
-        if(encontrado == false){
-            GrafoRutas ruta = new GrafoRutas(getNombreRuta());
-            String paradaAnterior = null;
-            for (ParadaTabla paradaTabla : datos) {
-                ruta.agregarParada(new Parada(paradaTabla.getNombre().toLowerCase()));
-                if(paradaTabla.getOrden()!= 1){
-                    ruta.conectar(paradaAnterior, paradaTabla.getNombre().toLowerCase());
-                }
-                paradaAnterior = paradaTabla.getNombre().toLowerCase();
+        if(encontrado){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Ruta duplicada");
+            alert.setHeaderText(null);
+            alert.setContentText("Ya existe una ruta con el nombre: " + nombreRuta.getText());
+            alert.showAndWait();
+            return;
+        }
+
+        GrafoRutas ruta = new GrafoRutas(getNombreRuta());
+        String paradaAnterior = null;
+        for (ParadaTabla paradaTabla : datos) {
+            ruta.agregarParada(new Parada(paradaTabla.getNombre().toLowerCase()));
+            if(paradaTabla.getOrden()!= 1){
+                ruta.conectar(paradaAnterior, paradaTabla.getNombre().toLowerCase());
             }
-            bdRutas.adicionarRuta(ruta);
-            bdRutas.guardarCambios();
-            for(GrafoRutas rut: bdRutas.getRutas()){
-                rutas.add(rut.getId());
-            }
+            paradaAnterior = paradaTabla.getNombre().toLowerCase();
+        }
+        bdRutas.adicionarRuta(ruta);
+        bdRutas.guardarCambios();
+        listViewRutas.getItems().clear();
+        for(GrafoRutas rut: bdRutas.getRutas()){
+            rutas.add(rut.getId());
         }
         nombreRuta.clear();
         limpiarTabla();
